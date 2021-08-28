@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Random_name</title>
+</head>
+
+<body>
+    <div class="top">
+        <p id="name" class="name">name</p>
+        <button id="start" class="start" value="start" type="button" onclick="Random_start()">start</button>
+        <button id="stop" class="stop" value="stop" type="button" onclick="Random_stop()">stop</button>
+        <button id="reset" value="reset" value="reset" type="button" onclick="Random_reset()">reset</button>
+    </div>
+    <table id="Table">
+    </table>
+    <script>
+        var mytimer = 0;
+        var ans;
+        var check = 0;
+
+        function Random_start() {
+            if (mytimer == 0) {
+                mytimer = setInterval(change_name, 100);
+                check = 1;
+            }
+        }
+
+        function change_name() {
+            var name = ["黃昱蓁", "王嘉德", "王瑞祥", "莊孟軒", "葉祐廷", "董宇晟", "蔡奕伸",
+                "蘇俊澤", "蘇士嘉", "許哲斐", "謝珮慈", "賴威齊", "邱維漢", "邱耀陞", "郭嘉吟",
+                "鄭丞佑", "陳彥勳", "陳彭華", "陳志光", "劉育嘉", "吳晨亘", "吳柏霖", "呂佳祐",
+                "周澂", "廖振鈞", "張育齊", "曾士祐", "曾柏諺", "曾韋翔", "李冠廷", "李育誠",
+                "李芃慧", "林泓翰", "林祐增", "林秉翰", "歐承翰", "沈勤叡", "洪崧宸", "游旻凱"
+            ];
+            var random = Math.floor(Math.random() * name.length);
+            ans = name[random];
+            document.getElementById("name").innerHTML = ans;
+        }
+
+        function Random_stop() {
+            if (check == 1) {
+                clearInterval(mytimer);
+                document.getElementById("Table").insertAdjacentHTML('beforeend', '<div id="record">' + ans + '</div>');
+                mytimer = 0;
+                check = 0;
+            }
+        }
+
+        function Random_reset() {
+            mytime = 0;
+            check = 0;
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

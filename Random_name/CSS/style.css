@@ -1,0 +1,29 @@
+.top {
+    text-align: center;
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    left: 180px;
+    display: inline-block;
+}
+
+button {
+    width: 200px;
+    height: 100px;
+    font-size: 50px;
+}
+
+.name {
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#record {
+    font-size: 50px;
+}
+
+#Table {
+    position: absolute;
+    left: 10px;
+    display: inline-block;
+}
